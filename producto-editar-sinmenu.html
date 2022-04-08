@@ -2434,7 +2434,8 @@ Before using it, carefully read the instructions for use contained in the test b
 		      
 		      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
 		      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
-		      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
+		      //document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
+			  CKEDITOR.instances.CaracteristicasING.setData(obj.translations[2].text);
 		      console.log(xhr.responseText);
 		   }};
 
@@ -2442,92 +2443,92 @@ Before using it, carefully read the instructions for use contained in the test b
 
 		xhr.send(data);
 
-	var Modelo = document.getElementsByName('Modelo')[0];
-	var Breve = document.getElementsByName('Breve')[0];
-	var Caracteristicas = document.getElementsByName('Caracteristicas')[0];
+	// var Modelo = document.getElementsByName('Modelo')[0];
+	// var Breve = document.getElementsByName('Breve')[0];
+	// var Caracteristicas = document.getElementsByName('Caracteristicas')[0];
 
-	Modelo.addEventListener('change', (event) => {
-		var text1 = document.getElementsByName('Modelo')[0].value;
-		var text2 = document.getElementsByName('Breve')[0].value;
-		var text3 = document.getElementsByName('Caracteristicas')[0].value;
+	// Modelo.addEventListener('change', (event) => {
+	// 	var text1 = document.getElementsByName('Modelo')[0].value;
+	// 	var text2 = document.getElementsByName('Breve')[0].value;
+	// 	var text3 = document.getElementsByName('Caracteristicas')[0].value;
 		
-		var url = "https://api-free.deepl.com/v2/translate";
+	// 	var url = "https://api-free.deepl.com/v2/translate";
 
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", url);
+	// 	var xhr = new XMLHttpRequest();
+	// 	xhr.open("POST", url);
 
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	// 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-		xhr.onreadystatechange = function () {
-		   if (xhr.readyState === 4) {
-		      console.log(xhr.status);
-		      const obj = JSON.parse(xhr.responseText);
+	// 	xhr.onreadystatechange = function () {
+	// 	   if (xhr.readyState === 4) {
+	// 	      console.log(xhr.status);
+	// 	      const obj = JSON.parse(xhr.responseText);
 		      
-		      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
-		      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
-		      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
-		      console.log(xhr.responseText);
-		   }};
+	// 	      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
+	// 	      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
+	// 	      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
+	// 	      console.log(xhr.responseText);
+	// 	   }};
 
-		var data = "auth_key=3641405e-475e-167e-87a8-cef5a456c0b3:fx&text="+text1 +"&text="+text2+"&text="+text3+"&source_lang=ES&target_lang=EN&split_sentences=nonewlines&tag_handling=html";
+	// 	var data = "auth_key=3641405e-475e-167e-87a8-cef5a456c0b3:fx&text="+text1 +"&text="+text2+"&text="+text3+"&source_lang=ES&target_lang=EN&split_sentences=nonewlines&tag_handling=html";
 
-		xhr.send(data);
-	});
+	// 	xhr.send(data);
+	// });
 
-	Breve.addEventListener('change', (event) => {
-		var text1 = document.getElementsByName('Modelo')[0].value;
-		var text2 = document.getElementsByName('Breve')[0].value;
-		var text3 = document.getElementsByName('Caracteristicas')[0].value;
+	// Breve.addEventListener('change', (event) => {
+	// 	var text1 = document.getElementsByName('Modelo')[0].value;
+	// 	var text2 = document.getElementsByName('Breve')[0].value;
+	// 	var text3 = document.getElementsByName('Caracteristicas')[0].value;
 		
-		var url = "https://api-free.deepl.com/v2/translate";
+	// 	var url = "https://api-free.deepl.com/v2/translate";
 
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", url);
+	// 	var xhr = new XMLHttpRequest();
+	// 	xhr.open("POST", url);
 
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	// 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-		xhr.onreadystatechange = function () {
-		   if (xhr.readyState === 4) {
-		      console.log(xhr.status);
-		      const obj = JSON.parse(xhr.responseText);
+	// 	xhr.onreadystatechange = function () {
+	// 	   if (xhr.readyState === 4) {
+	// 	      console.log(xhr.status);
+	// 	      const obj = JSON.parse(xhr.responseText);
 		      
-		      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
-		      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
-		      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
-		      console.log(xhr.responseText);
-		   }};
+	// 	      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
+	// 	      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
+	// 	      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
+	// 	      console.log(xhr.responseText);
+	// 	   }};
 
-		var data = "auth_key=3641405e-475e-167e-87a8-cef5a456c0b3:fx&text="+text1 +"&text="+text2+"&text="+text3+"&source_lang=ES&target_lang=EN&split_sentences=nonewlines&tag_handling=html";
+	// 	var data = "auth_key=3641405e-475e-167e-87a8-cef5a456c0b3:fx&text="+text1 +"&text="+text2+"&text="+text3+"&source_lang=ES&target_lang=EN&split_sentences=nonewlines&tag_handling=html";
 
-		xhr.send(data);
-	});
+	// 	xhr.send(data);
+	// });
 
-	Caracteristicas.addEventListener('change', (event) => {
-		var text1 = document.getElementsByName('Modelo')[0].value;
-		var text2 = document.getElementsByName('Breve')[0].value;
-		var text3 = document.getElementsByName('Caracteristicas')[0].value;
+	// Caracteristicas.addEventListener('change', (event) => {
+	// 	var text1 = document.getElementsByName('Modelo')[0].value;
+	// 	var text2 = document.getElementsByName('Breve')[0].value;
+	// 	var text3 = document.getElementsByName('Caracteristicas')[0].value;
 		
-		var url = "https://api-free.deepl.com/v2/translate";
+	// 	var url = "https://api-free.deepl.com/v2/translate";
 
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", url);
+	// 	var xhr = new XMLHttpRequest();
+	// 	xhr.open("POST", url);
 
-		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	// 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-		xhr.onreadystatechange = function () {
-		   if (xhr.readyState === 4) {
-		      console.log(xhr.status);
-		      const obj = JSON.parse(xhr.responseText);
+	// 	xhr.onreadystatechange = function () {
+	// 	   if (xhr.readyState === 4) {
+	// 	      console.log(xhr.status);
+	// 	      const obj = JSON.parse(xhr.responseText);
 		      
-		      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
-		      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
-		      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
-		      console.log(xhr.responseText);
-		   }};
+	// 	      document.getElementsByName('ModeloING')[0].value = obj.translations[0].text;
+	// 	      document.getElementsByName('BreveING')[0].value = obj.translations[1].text;
+	// 	      document.getElementsByName('CaracteristicasING')[0].value = obj.translations[2].text;
+	// 	      console.log(xhr.responseText);
+	// 	   }};
 
-		var data = "auth_key=3641405e-475e-167e-87a8-cef5a456c0b3:fx&text="+text1 +"&text="+text2+"&text="+text3+"&source_lang=ES&target_lang=EN&split_sentences=nonewlines&tag_handling=html";
+	// 	var data = "auth_key=3641405e-475e-167e-87a8-cef5a456c0b3:fx&text="+text1 +"&text="+text2+"&text="+text3+"&source_lang=ES&target_lang=EN&split_sentences=nonewlines&tag_handling=html";
 
-		xhr.send(data);
-	});
+	// 	xhr.send(data);
+	// });
 </script>
 </html>
